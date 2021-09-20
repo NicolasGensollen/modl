@@ -2,7 +2,7 @@ from os.path import join
 
 from modl.datasets import get_data_dirs
 from nilearn.datasets.utils import _fetch_file
-from sklearn.datasets.base import Bunch
+from sklearn.utils import Bunch
 
 from nilearn.datasets import fetch_adhd as nilearn_fetch_adhd
 

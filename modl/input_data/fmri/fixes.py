@@ -10,14 +10,13 @@ from nibabel import Nifti1Image as NibabelNifti1Image
 from nilearn._utils import check_niimg
 from nilearn._utils.class_inspect import get_params
 
-from nilearn._utils.compat import _basestring
-from nilearn._utils.niimg import short_repr, _get_target_dtype
+from nilearn._utils.niimg import _get_target_dtype
 from nilearn.input_data import MultiNiftiMasker
 from nilearn.input_data.nifti_masker import filter_and_mask, NiftiMasker
 
-from sklearn.externals import joblib as joblib
-from sklearn.externals.joblib.func_inspect import filter_args
-from sklearn.externals.joblib.hashing import NumpyHasher
+import joblib
+from joblib.func_inspect import filter_args
+from joblib.hashing import NumpyHasher
 
 
 # We rely on this patch to use nibabel image affine depending

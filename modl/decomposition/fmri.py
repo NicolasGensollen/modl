@@ -14,15 +14,11 @@ from math import log, sqrt
 from os.path import join
 
 import numpy as np
-from joblib import dump
 from nibabel.filebasedimages import ImageFileError
-from nilearn._utils import CacheMixin
-from nilearn._utils import check_niimg
+from nilearn._utils import CacheMixin, check_niimg
 from nilearn.input_data import NiftiMasker
 from sklearn.base import TransformerMixin
-from sklearn.externals.joblib import Memory
-from sklearn.externals.joblib import Parallel
-from sklearn.externals.joblib import delayed
+from joblib import dump, Memory, Parallel, delayed
 from sklearn.utils import check_random_state
 
 from ..input_data.fmri.base import BaseNilearnEstimator

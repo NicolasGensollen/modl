@@ -5,9 +5,8 @@ from nilearn._utils.class_inspect import get_params
 from nilearn.input_data import MultiNiftiMasker
 from nilearn.input_data.masker_validation import check_embedded_nifti_masker
 from sklearn.base import BaseEstimator
-from sklearn.externals.joblib import Memory
+from joblib import Memory
 
-from nilearn._utils.compat import _basestring
 import numpy as np
 
 
@@ -38,7 +37,7 @@ class BaseNilearnEstimator(BaseEstimator):
         self.verbose = verbose
 
     def fit(self, imgs=None, y=None, confounds=None):
-        if isinstance(imgs, _basestring) or not hasattr(imgs, '__iter__'):
+        if isinstance(imgs, str) or not hasattr(imgs, '__iter__'):
             # these classes are meant for list of 4D images
             # (multi-subject), we want it to work also on a single
             # subject, so we hack it.

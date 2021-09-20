@@ -1,7 +1,7 @@
 import numpy as np
 from ..input_data.image import clean_mask, fill
 from sklearn.base import BaseEstimator
-from sklearn.feature_extraction.image import extract_patches
+from sklearn.feature_extraction.image import _extract_patches
 from sklearn.utils import check_random_state
 
 
@@ -38,7 +38,7 @@ class LazyCleanPatchExtractor(BaseEstimator):
         else:
             patch_size = self.patch_size
         patch_shape = (patch_size[0], patch_size[1], n_channels)
-        self.patches_ = extract_patches(X, patch_shape=patch_shape)
+        self.patches_ = _extract_patches(X, patch_shape=patch_shape)
 
         clean = np.all(X != -1)
         if not clean:

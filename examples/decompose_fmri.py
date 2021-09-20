@@ -2,7 +2,7 @@
 # License: BSD
 
 import matplotlib as mpl
-mpl.use('Qt5Agg')
+#mpl.use('Qt5Agg')
 
 from nilearn.datasets import fetch_atlas_smith_2009
 from modl.input_data.fmri.fixes import monkey_patch_nifti_image
@@ -10,7 +10,7 @@ from modl.input_data.fmri.fixes import monkey_patch_nifti_image
 monkey_patch_nifti_image()
 
 import matplotlib.pyplot as plt
-from sklearn.externals.joblib import Memory
+from joblib import Memory
 from sklearn.model_selection import train_test_split
 
 from modl.datasets import fetch_adhd
